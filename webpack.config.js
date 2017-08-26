@@ -5,6 +5,9 @@ module.exports = {
     context: __dirname,
     entry: './js/ClientApp.jsx',
     devtool: 'cheap-eval-source-map',
+    devServer: {
+        publicPath: '/public/'
+    },
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
@@ -19,6 +22,12 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                enforce: 'pre',
+                test: /\.jsx?$/,
+                loader: 'eslint-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader'
