@@ -5,6 +5,8 @@
         "dev": "webpack-dev-server",
         "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=4 \"js/**/*.{js,jsx}\"",
         "lint": "/node_modules/.bin/eslint **/*.{js,jsx} --quiet",
+        "test": "jest",
+        "test:update": "jest -u",
         "watch": "webpack"
     },
     "dependencies": {
