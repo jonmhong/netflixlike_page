@@ -6,6 +6,7 @@
         "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=4 \"js/**/*.{js,jsx}\"",
         "lint": "/node_modules/.bin/eslint **/*.{js,jsx} --quiet",
         "test": "jest",
+        "test:coverage": "jest --coverage",
         "test:update": "jest -u",
         "watch": "webpack"
     },
@@ -33,6 +34,9 @@
         "webpack": "2.6.1",
         "webpack-dev-middleware": "1.10.2",
         "webpack-hot-middleware": "2.18.0"
+    },
+    "jest": {
+        "snapshotSerializers": ["jest-serializer-enzyme"]
     },
     "devDependencies": {
         "babel-core": "6.24.1",

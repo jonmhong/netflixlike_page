@@ -1,26 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Landing from './Landing';
-import Search from './Search';
+import App from './App';
 
-// BrowserRouter - higher order component that takes care of routing for you
-// Route - render the Landing component if the path matches exactly '/'
-// Switch - render exactly one component within, and never two
+const renderApp = () => {
+	render(<App />, document.getElementById('app'));
+};
 
-const FourOhFour = () => <h1>404</h1>;
+renderApp();
 
-const App = () => (
-	<BrowserRouter>
-		<div className='app'>
-			<Switch>
-				{/* This is how you comment */}
-				<Route exact path='/' component={Landing} />
-				<Route path ='/search' component={Search} />
-				<Route component={FourOhFour} />
-			</Switch>
-		</div>
-	</BrowserRouter>
-);
-
-render(<App />, document.getElementById('app'));
+if (module.hot) {
+	// only available in dev
+	// every time App changes, just rerender the whole app
+	module.hot.accept('./App', () => {
+		renderApp();
+	});
+};
