@@ -1,6 +1,8 @@
 # A Complete Intro to React
 
 This is creating a React (and Redux) web app, with Brian Holt's class.
+This web app displays dozens of movies, each with posters, titles, year, and descriptions.
+The search box filters words in the movie titles and descriptions.
 
 ## Contributing
 
