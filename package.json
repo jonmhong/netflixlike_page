@@ -2,10 +2,10 @@
     "scripts": {
         "api": "node ratingsAPI.js",
         "build": "webpack",
-        "dev": "./node_modules/.bin/webpack-dev-server",
+        "dev": "webpack-dev-server",
         "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=4 \"js/**/*.{js,jsx}\"",
         "lint": "/node_modules/.bin/eslint **/*.{js,jsx} --quiet",
-        "watch": "webpac"
+        "watch": "webpack"
     },
     "dependencies": {
         "axios": "0.16.1",
