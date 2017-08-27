@@ -1,5 +1,8 @@
+// @flow
+
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Details from './Details';
 import Landing from './Landing';
 import Search from './Search';
 
@@ -17,8 +20,9 @@ const App = () => (
         <div className='app'>
             <Switch>
                 {/* This is how you comment */}
-                <Route exact path='/' component={Landing} />
-                <Route path ='/search' component={Search} />
+                <Route exact path="/" component={Landing} />
+                <Route path ="/search" component={Search} />
+                <Route path="/details/:id" component={Details} />
                 <Route component={FourOhFour} />
             </Switch>
         </div>
