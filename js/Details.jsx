@@ -2,12 +2,10 @@
 
 import React from 'react';
 
-const Details = () => {
+const Details = () => (
     <div className='details'>
-        <h1>
-            Hello Details
-        </h1>
+        <h1>Hello Details</h1>
     </div>
-}
+);
 
 export default Details;
