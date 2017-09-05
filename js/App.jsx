@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Details from './Details';
+// import Details from './Details';
 import Landing from './Landing';
 import Search from './Search';
-import preload from '../data.json';
+// import preload from '../data.json';
 
 /*
 // this is used for server side rendering
@@ -23,7 +23,7 @@ const App = () => (
                 {/* This is how you comment */}
                 <Route exact path="/" component={Landing} />
                 <Route path ="/search" component={Search} />
-                <Route
+                {/* <Route
                     path="/details/:id"
                     component={props => {
                         const selectedShow = preload.shows.find(
@@ -33,7 +33,7 @@ const App = () => (
                             show={selectedShow}
                         />
                     }}
-                />
+                /> */}
                 <Route component={FourOhFour} />
             </Switch>
         </div>
