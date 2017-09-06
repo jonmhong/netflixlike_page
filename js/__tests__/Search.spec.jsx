@@ -8,20 +8,20 @@ import ShowCard from '../ShowCard';
 
 describe('<Search />', () => {
     test('Search renders correctly', () => {
-        const component = shallow(<Search />);
+        const component = shallow(<Search shows={preload.shows} />);
 
         expect(component).toMatchSnapshot();
     });
 
     test('should render correct amount of shows', () => {
         const moviesInJson = preload.shows.length;
-        const component = shallow(<Search />);
+        const component = shallow(<Search shows={preload.shows} />);
         const movieNumberRendered = component.find(ShowCard).length;
 
         expect(movieNumberRendered).toEqual(moviesInJson);
     });
 
-    test('should show correct number of shows based on search term', () => {
+    test('should show correct number of shows based on Search term', () => {
         const searchWord = 'black';
         // filter out all shows/descr in the json file that have the word 'black'
         const showCount = preload.shows.filter(
@@ -30,7 +30,7 @@ describe('<Search />', () => {
             ) >= 0
         ).length;
 
-        const component = shallow(<Search />);
+        const component = shallow(<Search shows={preload.shows} />);
         // simulate typing out the word 'black' in search
         component.find('input').simulate(
             'change', {target: {value: searchWord}}
