@@ -4,10 +4,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = (props: {
-	searchTerm?: String,
+	searchTerm?: string,
 	showSearch?: boolean,
 	handleSearchTermChange?: Function
-}) => { 
+}) => {
 	let utilSpace;
 	if (props.showSearch) {
 		utilSpace = (
