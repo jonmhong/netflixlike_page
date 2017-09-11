@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 // react-router also has naviation state:
 //  save a search results onto the link, so you can share
@@ -25,19 +25,31 @@ const Image = styled.img`
     margin-right: 10px;
 `;
 
-const ShowCard = (props: Show) => (
-    <Wrapper to={`./details/${props.imdbID}`}>
-        <Image
-            alt={`${props.title} Show Poster`}
-            src={`/public/img/posters/${props.poster}`}
-        />
-        <div>
-            <h3>{props.title}</h3>
-            <h4>({props.year})</h4>
-            <p>{props.description}</p>
-            <p>Something different</p>
-        </div>
-    </Wrapper>
-);
+class ShowCard extends Component {
+    // calls your method and ask if it should render or not
+    // don't use this until you absolutely need it
+    shouldComponentUpdate(nextProps) {
+        return false;
+    }
+
+    props: Show;
+
+    render() {
+        return(
+            <Wrapper to={`./details/${this.props.imdbID}`}>
+                <Image
+                    alt={`${this.props.title} Show Poster`}
+                    src={`/public/img/posters/${this.props.poster}`}
+                />
+                <div>
+                    <h3>{this.props.title}</h3>
+                    <h4>({this.props.year})</h4>
+                    <p>{this.props.description}</p>
+                    <p>Something different</p>
+                </div>
+            </Wrapper>
+        )
+    }
+}
 
 export default ShowCard;

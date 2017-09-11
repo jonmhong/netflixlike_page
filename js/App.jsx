@@ -17,6 +17,7 @@ import preload from '../data.json';
 
 const FourOhFour = () => <h1>404</h1>;
 
+// TODO: update state, so you can search from the front page
 const App = () => (
     <BrowserRouter>
         <div className='app'>
