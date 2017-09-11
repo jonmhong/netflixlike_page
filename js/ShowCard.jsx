@@ -28,11 +28,11 @@ const Image = styled.img`
 class ShowCard extends Component {
     // calls your method and ask if it should render or not
     // don't use this until you absolutely need it
-    shouldComponentUpdate(nextProps) {
+    shouldComponentUpdate() {
         return false;
     }
 
-    props: Show;
+    props: Show; 
 
     render() {
         return(
