@@ -3,7 +3,7 @@ import { SET_SEARCH_TERM } from './actions';
 DEFAULT_STATE = {
 	searchTerm: '',
 };
-
+ 
 const setSearchTerm = (state, action) => {
 	// left merge state and searchTerm into a new object
 	return Object.assign({}, state, { searchTerm: action.payload });

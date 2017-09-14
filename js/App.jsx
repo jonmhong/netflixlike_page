@@ -24,7 +24,9 @@ const App = () => (
             <Switch>
                 {/* This is how you comment */}
                 <Route exact path="/" component={Landing} />
-                <Route path ="/search" component={props => <Search shows={preload.shows} {...props}  />} />
+                <Route path ="/search" component={
+                    props => <Search shows={preload.shows} {...props}  />
+                } />
                 <Route
                     path="/details/:id"
                     component={(props: { match: Match }) => {
