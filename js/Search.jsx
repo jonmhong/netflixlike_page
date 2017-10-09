@@ -5,9 +5,13 @@ import ShowCard from './ShowCard';
 import Header from './Header';
 
 class Search extends React.Component {
-  state = {
-    searchTerm: ''
-  };
+  constructor(props) {
+    super(props);
+
+    state = {
+      searchTerm: ''
+    };
+  }
   props: {
     shows: Array<Show>,
   };

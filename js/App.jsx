@@ -43,3 +43,10 @@ const App = () => (
 );
 
 export default App;
+
+
+    const showSearchFilter = () => {
+      return(
+        <Search shows={preload.shows} {...this.state} />
+      )
+    }

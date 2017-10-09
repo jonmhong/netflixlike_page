@@ -2,10 +2,12 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import preload from '../data.json';
+import Search from './Search';
 
 class Landing extends Component {
 	state = {
-		searchTerm: '',
+		homeSearchTerm: '',
 	};
 
 	render() {
@@ -15,9 +17,13 @@ class Landing extends Component {
         <input
         	type='text'
         	placeholder='Search'
-        	searchTerm={this.state.searchTerm}
         />
-        <Link to='/search'>or Browse All</Link>
+        <Link 
+        	to='/search'
+        	onClick={() => {
+        		<Search shows={preload.shows} {...state} />
+        	}}
+        >or Browse All</Link>
     	</div>
 		)
 	}
